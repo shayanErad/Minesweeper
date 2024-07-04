@@ -12,7 +12,7 @@ int emtiazpl2(int map[8][8], int x, int y){
 
 
 int showMap(int show[8][8], int map[8][8], int x, int y){
-    system("cls");
+    system("clear");
     
     
     
@@ -102,7 +102,7 @@ void checkBomb(int map[8][8], int x, int y){
 
 }
 
-int select(int show[8][8], int map[8][8], int x, int y){
+int my_select(int show[8][8], int map[8][8], int x, int y){
     
     if (x<0 || y<0 || x>=8 || y>=8){
         return 0;
@@ -113,14 +113,14 @@ int select(int show[8][8], int map[8][8], int x, int y){
     show[x][y] = 1;
     if (map[x][y] == 0){
         
-        select(show, map, x+1, y);
-        select(show, map, x-1, y);
-        select(show, map, x, y+1);
-        select(show, map, x, y-1);
-        select(show, map, x+1, y+1);
-        select(show, map, x+1, y-1);
-        select(show, map, x-1, y+1);
-        select(show, map, x-1, y-1);
+        my_select(show, map, x+1, y);
+        my_select(show, map, x-1, y);
+        my_select(show, map, x, y+1);
+        my_select(show, map, x, y-1);
+        my_select(show, map, x+1, y+1);
+        my_select(show, map, x+1, y-1);
+        my_select(show, map, x-1, y+1);
+        my_select(show, map, x-1, y-1);
     }    
     
 }
@@ -199,7 +199,7 @@ int main(){
         printf("enter Y : ");
         scanf("%d", &y);
 
-        select(show, map, x, y);
+        my_select(show, map, x, y);
         showMap(show, map, x, y);
         
 
