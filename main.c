@@ -12,8 +12,8 @@ int emtiazpl2(int map[8][8], int x, int y){
 
 
 int showMap(int show[8][8], int map[8][8], int x, int y){
-    system("clear");
-    
+    system("cls");
+    //system("clear"); ==> for run in linux
     
     
     
